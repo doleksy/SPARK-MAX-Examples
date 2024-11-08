@@ -84,12 +84,12 @@ class Robot : public frc::TimedRobot {
         maxConfig.softLimit.ReverseSoftLimitEnabled(revEnabled);
     }
 
-    if (bool newFwdLimit = frc::SmartDashboard::GetBoolean("Forward Soft Limit", 15); newFwdLimit != fwdLimit)
+    if (bool newFwdLimit = frc::SmartDashboard::GetNumber("Forward Soft Limit", 15); newFwdLimit != fwdLimit)
     {
         fwdLimit = newFwdLimit;
         maxConfig.softLimit.ForwardSoftLimit(fwdLimit);
     }
-    if (bool newRevLimit = frc::SmartDashboard::GetBoolean("Reverse Soft Limit", 0); newRevLimit != revLimit)
+    if (bool newRevLimit = frc::SmartDashboard::GetNumber("Reverse Soft Limit", 0); newRevLimit != revLimit)
     {
         revLimit = newRevLimit;
         maxConfig.softLimit.ReverseSoftLimit(revLimit);
